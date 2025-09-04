@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de CIs Recebidas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CIs Recebidas pela Secretaria</h1>
+
+        <div class="form-section">
+            <h2>Nova CI</h2>
+            <form id="formularioCi" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="numeroCi">Número da CI:</label>
+                        <input type="text" id="numeroCi" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="dataRecebimento">Data de Recebimento:</label>
+                        <input type="date" id="dataRecebimento" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="remetente">Remetente:</label>
+                        <input type="text" id="remetente" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="destinatario">Destinatário:</label>
+                        <input type="text" id="destinatario" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="assunto">Assunto:</label>
+                        <input type="text" id="assunto" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="arquivoCi">Anexar CI (PNG):</label>
+                        <input type="file" id="arquivoCi" accept="image/png">
+                    </div>
+                </div>
+                <button type="submit">Adicionar CI</button>
+            </form>
+        </div>
+
+        <div class="list-section">
+            <h2>Lista de CIs</h2>
+            <input type="text" id="buscaInput" placeholder="Pesquisar por número, remetente ou destinatário..." onkeyup="filtrarCis()">
+            <table id="tabelaCi">
+                <thead>
+                    <tr>
+                        <th>Número CI</th>
+                        <th>Remetente</th>
+                        <th>Destinatário</th>
+                        <th>Assunto</th>
+                        <th>Data Recebimento</th>
+                        <th>Arquivo</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            <p id="mensagemSemCi" style="display: none; text-align: center; margin-top: 20px;">Nenhuma CI encontrada.</p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
