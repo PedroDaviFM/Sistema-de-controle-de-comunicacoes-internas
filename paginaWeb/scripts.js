@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para renderizar as CIs na tabela
     function renderizarCis(cis) {
-        corpoTabelaCi.innerHTML = ''; // Limpa a tabela
+        corpoTabelaCi.innerHTML = '';
         if (cis.length === 0) {
             mensagemSemCi.style.display = 'block';
             tabelaCi.style.display = 'none';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cis.forEach(ci => {
             const linha = corpoTabelaCi.insertRow();
-            linha.dataset.id = ci.id; // Armazena o ID no atributo de dados da linha
+            linha.dataset.id = ci.id;
 
             const classeStatus = ci.lida ? 'status-lida' : 'status-pendente';
             const textoStatus = ci.lida ? 'Lida' : 'Pendente';
